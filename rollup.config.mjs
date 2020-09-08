@@ -1,8 +1,9 @@
-import license from 'rollup-plugin-license';
 import alias from '@rollup/plugin-alias';
-import json from '@rollup/plugin-json';
-import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import json from '@rollup/plugin-json';
+import license from 'rollup-plugin-license';
+import nodeResolve from '@rollup/plugin-node-resolve';
+import replace from '@rollup/plugin-replace';
 
 export default {
   input: 'index.mjs',
@@ -12,6 +13,9 @@ export default {
     name: 'URL'
   },
   plugins: [
+    replace({
+      "return Buffer.from": "return "
+    }),
     license({
       thirdParty: {
         includePrivate: true, // Default is false.
