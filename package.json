@@ -6,7 +6,9 @@
   "scripts": {
     "build": "rollup  --config rollup.config.mjs"
   },
-  "author": "Myles Borins <myles.borins@gmail.com>",
+  "authors": [
+    "the jstime authors"
+  ],
   "license": "Apache-2.0",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^15.0.0",
