@@ -1,5 +1,5 @@
 import license from 'rollup-plugin-license';
-import nodePolyfills from 'rollup-plugin-node-polyfills';
+import alias from '@rollup/plugin-alias';
 import json from '@rollup/plugin-json';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
@@ -21,12 +21,16 @@ export default {
         },
       },
     }),
-    nodePolyfills(),
+    alias({
+      entries: [
+        { find: 'util', replacement: new URL('./lib/util.js', import.meta.url).pathname }
+      ]
+    }),
     json(),
     nodeResolve({
       mainFields: ['main'],
       preferBuiltins: false
     }),
-    commonjs()
+    commonjs(),
   ]
 };
