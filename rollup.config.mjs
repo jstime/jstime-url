@@ -7,8 +7,8 @@ import commonjs from '@rollup/plugin-commonjs';
 export default {
   input: 'index.mjs',
   output: {
-    file: 'output/url-bundle.mjs',
-    format: 'esm',
+    file: 'output/url-bundle.js',
+    format: 'iife',
     name: 'URL'
   },
   plugins: [
