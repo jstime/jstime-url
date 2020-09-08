@@ -1,0 +1,21 @@
+{
+  "name": "jstime-url",
+  "version": "1.0.0",
+  "description": "Project to generate URL to embed in jstime",
+  "main": "index.mjs",
+  "scripts": {
+    "build": "rollup  --config rollup.config.mjs"
+  },
+  "author": "Myles Borins <myles.borins@gmail.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^15.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "rollup": "^2.26.10",
+    "rollup-plugin-node-polyfills": "^0.2.1"
+  },
+  "dependencies": {
+    "whatwg-url": "^8.2.2"
+  }
+}
