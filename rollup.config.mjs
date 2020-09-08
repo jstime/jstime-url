@@ -1,13 +1,10 @@
-const {join} = require('path');
+import license from 'rollup-plugin-license';
+import nodePolyfills from 'rollup-plugin-node-polyfills';
+import json from '@rollup/plugin-json';
+import nodeResolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 
-const license = require('rollup-plugin-license');
-const nodePolyfills = require('rollup-plugin-node-polyfills');
-const json = require('@rollup/plugin-json');
-const {nodeResolve} = require('@rollup/plugin-node-resolve');
-
-const commonjs = require('@rollup/plugin-commonjs');
-
-module.exports = {
+export default {
   input: 'index.mjs',
   output: {
     file: 'output/url-bundle.mjs',
@@ -19,7 +16,7 @@ module.exports = {
       thirdParty: {
         includePrivate: true, // Default is false.
         output: {
-          file: join(__dirname, 'output', 'url-dependencies.txt'),
+          file: new URL('./output/url-dependencies.txt', import.meta.url).pathname,
           encoding: 'utf-8', // Default is utf-8.
         },
       },

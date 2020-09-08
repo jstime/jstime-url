@@ -4,7 +4,7 @@
   "description": "Project to generate URL to embed in jstime",
   "main": "index.mjs",
   "scripts": {
-    "build": "rollup  --config rollup.config.js"
+    "build": "rollup  --config rollup.config.mjs"
   },
   "author": "Myles Borins <myles.borins@gmail.com>",
   "license": "Apache-2.0",
